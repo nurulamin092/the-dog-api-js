@@ -1,11 +1,8 @@
-const loadTheDog = () => {
+const loadTheDog = async () => {
     const url = `https://api.thedogapi.com/v1/breeds`;
-    /*   const res = await fetch(url);
-      const data = res.json();
-      displayTheDog(data.dogs) */
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayTheDog(data));
+    const res = await fetch(url);
+    const data = await res.json();
+    displayTheDog(data);
 }
 const displayTheDog = dogs => {
     const dogsInput = document.getElementById('dogs');
@@ -21,7 +18,7 @@ const displayTheDog = dogs => {
         </div>
         `;
         dogsInput.appendChild(div);
-        console.log(dog);
+        //console.log(dog);
     });
 }
 //loadTheDog()
