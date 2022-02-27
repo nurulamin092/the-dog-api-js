@@ -4,8 +4,9 @@ const loadTheDog = async () => {
     const data = await res.json();
     displayTheDog(data);
 }
-const displayTheDog = dogs => {
+const displayTheDog = dogList => {
     const dogsInput = document.getElementById('dogs');
+    const dogs = dogList.slice(0, 18);
     dogs.forEach(dog => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -18,7 +19,7 @@ const displayTheDog = dogs => {
         </div>
         `;
         dogsInput.appendChild(div);
-        //console.log(dog);
+        console.log(dog);
     });
 }
 //loadTheDog()
